@@ -1,10 +1,22 @@
 import { getAllPeople, getSinglePeople } from "@/services";
 import { IPeople } from "../page";
 import DetailLayout from "@/components/DetailLayout";
+import { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
+
+export const generateMetadata = async ({
+  params,
+}: PageProps): Promise<Metadata> => {
+  const { id } = await params;
+const response = await getSinglePeople(id);
+  const people = response.data;
+  return {
+    title: people.name,
+  };
+};
 
 export async function generateStaticParams() {
   try {

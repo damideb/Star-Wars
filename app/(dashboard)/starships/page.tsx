@@ -5,6 +5,7 @@ import { getAllStarships } from "@/services";
 import { starshipHeader } from "@/utils/utils";
 import { useEffect, useState } from "react";
 
+
 export interface IStar {
   name: string;
   class: string;

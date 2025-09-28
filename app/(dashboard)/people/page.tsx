@@ -1,6 +1,11 @@
 import Table from "@/components/reusables/Table";
 import { getAllPeople } from "@/services";
 import { formatDate, peopleHeader } from "@/utils/utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "People",
+};
 
 export interface IPeople {
   name: string;

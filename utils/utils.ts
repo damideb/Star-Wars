@@ -9,10 +9,6 @@ export const passwordCriteria = [
   },
   { label: "Numbers", test: (password: string) => /[0-9]/.test(password) },
   {
-    label: "Special character",
-    test: (password: string) => /[\W_]/.test(password),
-  },
-  {
     label: "8 characters minimum",
     test: (password: string) => password.length >= 8
   },

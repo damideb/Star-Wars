@@ -1,10 +1,22 @@
 import { getAllStarships, getSingleStarship } from "@/services";
 import { IStar } from "../page";
 import DetailLayout from "@/components/DetailLayout";
+import { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
+
+export const generateMetadata = async ({
+  params,
+}: PageProps): Promise<Metadata> => {
+  const { id } = await params;
+  const response = await getSingleStarship(id);
+  const star = response.data;
+  return {
+    title: star.name,
+  };
+};
 
 export async function generateStaticParams() {
   try {
@@ -34,7 +46,7 @@ export default async function Page({ params }: PageProps) {
         details={{
           Model: star?.model,
           Passengers: star?.passengers,
-          Pilots: star?.pilots.join(''),
+          Pilots: star?.pilots.length ? star?.pilots.join(", ") : "--",
         }}
       />
     );

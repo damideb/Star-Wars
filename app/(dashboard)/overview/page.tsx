@@ -7,7 +7,12 @@ import {
   getAllStarships,
 } from "@/services";
 import { overviewHeader } from "@/utils/utils";
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+  title: 'Overview',
+};
 export interface IFilm {
   title: string;
   director: string;
@@ -67,7 +72,7 @@ export default async function Page() {
 
   return (
     <main className="flex flex-col gap-5">
-      <div className="flex flex-col lg:w-[90%] md:flex-row gap-12">
+      <div className="flex animate-fadeSlideIn flex-col lg:w-[90%] md:flex-row gap-12">
         <MetricCard
           metric={{
             category: "Films",
@@ -100,7 +105,7 @@ export default async function Page() {
 
       <div className="mt-10 ">
         <h2 className="text-muted">Films</h2>
-        <Table route='overview' headers={overviewHeader} items={films} />
+        <Table route="overview" headers={overviewHeader} items={films} />
       </div>
     </main>
   );

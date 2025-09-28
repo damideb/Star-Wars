@@ -1,6 +1,12 @@
 import Table from "@/components/reusables/Table";
 import { getAllSpecies } from "@/services";
 import { formatDate, speciesHeader } from "@/utils/utils";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Species",
+};
 export interface ISpecies {
   name: string;
   eye_colors: string;

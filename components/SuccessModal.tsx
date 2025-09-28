@@ -15,7 +15,7 @@ export default function SuccessModal({ isOpen }: SuccessModalProps) {
     if (isOpen) {
       const timer = setTimeout(() => {
         router.push("/overview");
-      }, 4000);
+      }, 1500);
 
       return () => clearTimeout(timer);
     }

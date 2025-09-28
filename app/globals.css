@@ -79,3 +79,18 @@ input:not(:placeholder-shown) ~ .floating-label {
   border: 1px solid var(--blue-500);
 }
 
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeSlideIn {
+  animation: fadeSlideIn 1s ease-out forwards;
+}

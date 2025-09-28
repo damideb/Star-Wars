@@ -2,10 +2,23 @@ import { getSingleFilm, getAllFilms } from "@/services";
 import { IFilm } from "../page";
 import { formatFullDate } from "@/utils/utils";
 import DetailLayout from "@/components/DetailLayout";
+import { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
+
+export const generateMetadata = async ({
+  params,
+}: PageProps): Promise<Metadata> => {
+  const { id } = await params;
+
+  const response = await getSingleFilm(id);
+  const film = response.data;
+  return {
+    title: film.title,
+  };
+};
 
 export async function generateStaticParams() {
   try {

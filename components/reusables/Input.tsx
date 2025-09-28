@@ -39,7 +39,7 @@ export default function Input({
           onChange={onChange}
           onBlur={onBlur}
           aria-invalid={!!error}
-          className={`outline-none p-3 rounded border ${
+          className={`outline-none p-2.5 rounded border ${
             error ? "border-red-500" : "border-muted"
           }`}
         />

@@ -49,8 +49,8 @@ export default function Login() {
 
   return (
     <>
-      <div className="bg-white rounded-lg p-5 md:p-10 border h-fit border-gray-200 shadow w-[95%] max-w-130 mx-auto lg:w-120">
-        <h1 className="text-xl md:text-2xl font-semibold mb-1 text-[#434854]">
+      <div className="bg-white rounded-lg p-5 lg:p-10 border h-fit border-[#A4A7B74D] w-[95%] md:w-90  max-w-130 mx-auto lg:w-120">
+        <h1 className="text-xl md:text-2xl font-semibold mb-1.5 text-[#434854]">
           Login
         </h1>
         <p className="text-[#737373]">Kindly enter your details to log in</p>
@@ -109,7 +109,7 @@ export default function Login() {
           Forgot your password?
         </button>
 
-        <div className="flex gap-1 items-center justify-center text-xs mt-20 text-[#B0B9C8] text-center">
+        <div className="flex gap-1 items-center justify-center text-xs mt-16 lg:mt-24 text-[#B0B9C8] text-center">
           <Link href="#" className="underline text-[#434854]">
             Privacy Policy
           </Link>
